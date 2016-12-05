@@ -22,6 +22,7 @@ class Model(object):
         for c in [start, destination]:
             f = self.board[start.i][start.j]
             self.board[destination.i][destination.j] = f
+            self.board[start.i][start.j] = EMPTY_SQUARE
 
 
 class BoardLocation(object):
