@@ -27,6 +27,15 @@ class Model(object):
                     self.board[start.i][start.j] = EMPTY_SQUARE
                 else:
                     print("Movement not allowed to Rook")
+
+            elif f == 'B' or f == 'b':
+                if ([start.i] != [destination.i]) and ([start.j] != [destination.j]):
+                    self.board[destination.i][destination.j] = f
+                    self.board[start.i][start.j] = EMPTY_SQUARE
+                else:
+                    print("Movement not allowed to Bishop")
+
+
             else:
                 self.board[destination.i][destination.j] = f
                 self.board[start.i][start.j] = EMPTY_SQUARE
