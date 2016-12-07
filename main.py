@@ -20,8 +20,19 @@ class Model(object):
 
     def move(self, start, destination):
         f = self.board[start.i][start.j]
-        self.board[destination.i][destination.j] = f
-        self.board[start.i][start.j] = EMPTY_SQUARE
+        if not f == EMPTY_SQUARE:
+            if f == 'R' or f == 'r':
+                if ([start.i] == [destination.i]) or ([start.j] == [destination.j]):
+                    self.board[destination.i][destination.j] = f
+                    self.board[start.i][start.j] = EMPTY_SQUARE
+                else:
+                    print("Movement not allowed to Rook")
+            else:
+                self.board[destination.i][destination.j] = f
+                self.board[start.i][start.j] = EMPTY_SQUARE
+
+        else:
+            print("Try again, you cant move blank spaces!!")
 
 
 class BoardLocation(object):
