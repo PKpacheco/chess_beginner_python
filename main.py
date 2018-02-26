@@ -67,9 +67,9 @@ class Controller(object):
     def run(self):
         while True:
             self.view.display(self.model.board)
-            move = raw_input("move (exemple e2-e5 or quit) ")
+            move = raw_input("move (exemple e2-e5 or q) ")
             move = move.lower()
-            if move == "quit":
+            if move == "q":
                 break
             start, destination = self.basic_movement(move)
             self.model.move(start, destination)
